@@ -1,0 +1,16 @@
+{
+    "name": "ApplyCV2FilterOperator",
+    "dependency": {
+        "dockerfile": "Dockerfile_0"
+    },
+    "tags": [
+        "Example"
+    ],
+    "style": {
+        "node_label": "Apply filter",
+        "node_style": {
+            "backgroundColor": "#b3cde8"
+        },
+        "icon_class_name": "fas fa-database"
+    }
+}

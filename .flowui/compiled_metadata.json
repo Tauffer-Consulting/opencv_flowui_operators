@@ -1,0 +1,92 @@
+{
+    "ApplyCV2FilterOperator": {
+        "name": "ApplyCV2FilterOperator",
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": "Dockerfile_0",
+            "requirements_file": null
+        },
+        "tags": [
+            "Example"
+        ],
+        "style": {
+            "node_label": "Apply filter",
+            "node_type": "default",
+            "node_style": {
+                "backgroundColor": "#b3cde8"
+            },
+            "useIcon": true,
+            "icon_class_name": "fas fa-database",
+            "iconStyle": {
+                "cursor": "pointer"
+            }
+        },
+        "input_schema": {
+            "title": "InputModel",
+            "description": "Apply effect to image",
+            "type": "object",
+            "properties": {
+                "input_file_path": {
+                    "title": "Input File Path",
+                    "description": "Path to the input file",
+                    "type": "string"
+                },
+                "effect": {
+                    "description": "Effect to be applied",
+                    "default": "random",
+                    "allOf": [
+                        {
+                            "$ref": "#/definitions/EffectType"
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "input_file_path"
+            ],
+            "definitions": {
+                "EffectType": {
+                    "title": "EffectType",
+                    "description": "An enumeration.",
+                    "enum": [
+                        "random",
+                        "grayscale",
+                        "bright",
+                        "dark",
+                        "sharp",
+                        "sepia",
+                        "pencil",
+                        "pencil_color",
+                        "hdr",
+                        "invert",
+                        "summer",
+                        "winter"
+                    ],
+                    "type": "string"
+                }
+            }
+        },
+        "output_schema": {
+            "title": "OutputModel",
+            "description": "Apply effect to image",
+            "type": "object",
+            "properties": {
+                "message": {
+                    "title": "Message",
+                    "description": "Output message to log",
+                    "default": "",
+                    "type": "string"
+                },
+                "output_file_path": {
+                    "title": "Output File Path",
+                    "description": "Path to the output file",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "output_file_path"
+            ]
+        },
+        "secrets_schema": null
+    }
+}

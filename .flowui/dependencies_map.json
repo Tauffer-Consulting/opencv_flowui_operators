@@ -1,0 +1,14 @@
+{
+    "opencv_flowui_operators_image_0": {
+        "dependency": {
+            "docker_image": null,
+            "dockerfile": "Dockerfile_0",
+            "requirements_file": null
+        },
+        "operators": [
+            "ApplyCV2FilterOperator"
+        ],
+        "secrets": [],
+        "source_image": "taufferconsulting/opencv_flowui_operators_image_0:0.0.1"
+    }
+}

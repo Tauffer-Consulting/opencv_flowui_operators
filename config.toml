@@ -1,0 +1,6 @@
+[repository]
+REPOSITORY_NAME = "opencv_flowui_operators"
+VERSION = "0.0.1"
+
+[dockerhub]
+REGISTRY_NAME = "taufferconsulting"
