@@ -1,0 +1,9 @@
+{
+    "name": "ApplyCV2FilterOperator",
+    "dependency": {
+        "dockerfile": "Dockerfile_0"
+    },
+    "tags": [
+        "Example"
+    ],
+}

@@ -45,7 +45,7 @@ def apply_sepia(img):
     ) 
     img_sepia[np.where(img_sepia > 255)] = 255  # normalizing values greater than 255 to 255
     img_sepia = np.array(img_sepia, dtype=np.uint8)
-    return
+    return img_sepia
 
 # pencil filter
 def apply_pencil(img):
