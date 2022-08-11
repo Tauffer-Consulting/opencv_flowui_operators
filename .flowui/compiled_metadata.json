@@ -21,6 +21,7 @@
                 "cursor": "pointer"
             }
         },
+        "description": "Apply filter effect to Image",
         "input_schema": {
             "title": "InputModel",
             "description": "Apply effect to image",
