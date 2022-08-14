@@ -1,5 +1,6 @@
 {
-    "name": "ApplyCV2FilterOperator",
+    "name": "ApplyGrayscaleFilterOperator",
+    "description": "Apply filter effect to Image",
     "dependency": {
         "dockerfile": "Dockerfile_0"
     },
