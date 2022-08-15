@@ -11,22 +11,29 @@ import numpy as np
 def apply_averaging(img):
     return cv2.blur(img,(5,5))
 
+
 def apply_gaussianblurring(img):
     return cv2.GaussianBlur(img,(5,5),0)
+
 
 def apply_medianblurring(img):
     return cv2.medianBlur(img,5)
 
+
 def apply_bilateralfiltering(img):
     return cv2.bilateralFilter(img,9,75,75)
+
 
 def apply_base64_image(img):
     _, encoded_img = cv2.imencode('.png', img)  # Works for '.jpg' as well
     base64_img = base64.b64encode(encoded_img).decode("utf-8")
     return base64_img
 
+
 def apply_numpy_array_image(img):
     return img
+
+
 class ApplyBlurFilter(BaseOperator):
 
     def operator_function(self, input_model: InputModel):
@@ -60,12 +67,12 @@ class ApplyBlurFilter(BaseOperator):
         image_processed = effect_types_map[chosen_effect](img=image)
 
         # Save result
-        if input_model.format:
+        if input_model.image_format:
             format_map = dict(
             base64_image = apply_base64_image,
             numpy_array_image = apply_numpy_array_image
         )
-            chosen_format = input_model.format
+            chosen_format = input_model.image_format
             image_data = format_map[chosen_format](img=image_processed)
             return OutputModel(
                 message="Image successfully downloaded and sent through XCOM.",

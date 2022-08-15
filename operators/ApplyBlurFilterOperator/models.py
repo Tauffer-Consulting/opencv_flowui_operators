@@ -1,15 +1,19 @@
 from pydantic import BaseModel, Field
 from enum import Enum
 
+
 class EffectType(str, Enum):
     averaging = "averaging"
     gaussianblurring = "gaussianblurring"
     medianblurring = "medianblurring"
     bilateralfiltering = "bilateralfiltering"
 
+
 class ImageFormat(str, Enum):
     numpy_array = 'narray'
     base64 = 'base64'
+
+
 class InputModel(BaseModel):
     """
     Apply effect to image
@@ -35,7 +39,7 @@ class InputModel(BaseModel):
         default='gaussianblurring',
         description='Effect to be applied'
     )
-    format: ImageFormat = Field(
+    image_format: ImageFormat = Field(
         default=None,
         description='Image format'
     )
