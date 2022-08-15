@@ -92,6 +92,8 @@ def apply_base64_image(img):
 
 def apply_numpy_array_image(img):
     return img
+
+
 class ApplyCV2FilterOperator(BaseOperator):
 
     def operator_function(self, input_model: InputModel):

@@ -14,9 +14,13 @@ class EffectType(str, Enum):
     invert = "invert"
     summer = "summer"
     winter = "winter"
+
+
 class ImageFormat(str, Enum):
     numpy_array = 'narray'
     base64 = 'base64'
+
+
 class InputModel(BaseModel):
     """
     Apply effect to image
@@ -46,6 +50,7 @@ class InputModel(BaseModel):
         default=None,
         description='Image format'
     )
+
 
 class OutputModel(BaseModel):
     """
