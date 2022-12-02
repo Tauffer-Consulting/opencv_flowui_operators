@@ -1,19 +1,12 @@
 from pydantic import BaseModel, Field
 from enum import Enum
 
+
 class EffectType(str, Enum):
-    random = "random"
-    grayscale = "grayscale"
-    bright = "bright"
-    dark = "dark"
-    sharp = "sharp"
-    sepia = "sepia"
-    pencil = "pencil"
-    pencil_color = "pencil_color"
-    hdr = "hdr"
-    invert = "invert"
-    summer = "summer"
-    winter = "winter"
+    averaging = "averaging"
+    gaussianblurring = "gaussianblurring"
+    medianblurring = "medianblurring"
+    bilateralfiltering = "bilateralfiltering"
 
 
 class ImageFormat(str, Enum):
@@ -43,10 +36,10 @@ class InputModel(BaseModel):
         description="Numpy Array image"
     )
     effect: EffectType = Field(
-        default='random',
+        default='gaussianblurring',
         description='Effect to be applied'
     )
-    format: ImageFormat = Field(
+    image_format: ImageFormat = Field(
         default=None,
         description='Image format'
     )

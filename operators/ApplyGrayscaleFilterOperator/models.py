@@ -1,26 +1,9 @@
 from pydantic import BaseModel, Field
 from enum import Enum
 
-class EffectType(str, Enum):
-    random = "random"
-    grayscale = "grayscale"
-    bright = "bright"
-    dark = "dark"
-    sharp = "sharp"
-    sepia = "sepia"
-    pencil = "pencil"
-    pencil_color = "pencil_color"
-    hdr = "hdr"
-    invert = "invert"
-    summer = "summer"
-    winter = "winter"
-
-
 class ImageFormat(str, Enum):
     numpy_array = 'narray'
     base64 = 'base64'
-
-
 class InputModel(BaseModel):
     """
     Apply effect to image
@@ -41,10 +24,6 @@ class InputModel(BaseModel):
     numpy_array: str = Field(
         default=None,
         description="Numpy Array image"
-    )
-    effect: EffectType = Field(
-        default='random',
-        description='Effect to be applied'
     )
     format: ImageFormat = Field(
         default=None,

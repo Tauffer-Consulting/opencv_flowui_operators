@@ -1,0 +1,10 @@
+{
+    "name": "ApplyEdgeFilterOperator",
+    "description": "Apply filter effect to Image",
+    "dependency": {
+        "dockerfile": "Dockerfile_0"
+    },
+    "tags": [
+        "Example"
+    ]
+}
